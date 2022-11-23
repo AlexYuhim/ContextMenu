@@ -23,18 +23,22 @@ export class ModuleRandomWeather extends Module{
 
 
     function getRandomWeather(){
-      const  URL_API_Weather = `http://api.weatherapi.com/v1/current.json?key=b9453e9ca4f14ce1be4123538220911&q=${getRandomNumber(-70,70)}.${getRandomNumber(0,9999)},${getRandomNumber(-110,170)}.${getRandomNumber(0,9999)}&aqi=no`
+
+      const  URL_API_Weather = `http://api.openweathermap.org/data/2.5/forecast?id=524901&appid=e2df2d1b98fc561c2c721d6d2a82353e`
+      // const  URL_API_Weather = `http://api.weatherapi.com/v1/current.json?key=b9453e9ca4f14ce1be4123538220911&q=${getRandomNumber(-70,70)}.${getRandomNumber(0,9999)},${getRandomNumber(-110,170)}.${getRandomNumber(0,9999)}&aqi=no`
       fetch(URL_API_Weather)
         .then((response)=>response.json())
         .then((city)=>{
-          document.querySelector('.city-name').innerHTML = `Город : ${city.location.name}`;
-          document.querySelector('.city-temp').innerHTML =`Температура : ${city.current.temp_c} `;
-          console.log('CITY',  city.location.name)
-          console.log("temp_c",  city.current.temp_c)
+          console.log(city)
+          // document.querySelector('.city-name').innerHTML = `Город : ${city.location.name}`;
+          // document.querySelector('.city-temp').innerHTML =`Температура : ${city.current.temp_c} `;
+          // console.log('CITY',  city.location.name)
+          // console.log("temp_c",  city.current.temp_c)
 
         })
         .catch((err)=>{
-          getRandomWeather()
+          console.log(err)
+          // getRandomWeather()
 
         })
 
