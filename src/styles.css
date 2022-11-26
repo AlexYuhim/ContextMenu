@@ -691,10 +691,22 @@ h3{
 /*/===========wrapperRandomWeather=================/*/
 
 
-.wrapperRandomWeather{
-
+.wrapper-random-weather{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vh;
+    height: 100vh;
+    margin: 0 auto;
 }
 
+.city{
+    margin: 0 auto;
+}
+
+.title-name-module{
+    margin-bottom: 1em;
+}
 
 
 

@@ -15,7 +15,7 @@ const dragDrop = new DragDropModule('dragDrop-module', 'Проект №2 Drag&d
 const slider = new SliderModule('slider-module', 'Проект №3 Слайдер');
 const board = new BoardModule('board-module', 'Проект №4 Доска');
 const aimGame = new AimGameModule('aimGame-module', 'Проект №5 Aim Game' );
-const randomWeather = new ModuleRandomWeather('randomWeather-module', 'Вывести погоду в рандомном городе')
+const randomWeather = new ModuleRandomWeather('randomWeather-module', 'Вывести погоду в рандомном месте земли')
 
 
 menu.add([cards.toHTML(),dragDrop.toHTML(),slider.toHTML(),board.toHTML(),aimGame.toHTML(),randomWeather.toHTML()]);
@@ -88,7 +88,6 @@ document.querySelector('.menu').addEventListener('click',(evt)=>{
 
   if (evt.target.getAttribute('data-type') === 'randomWeather-module'){
     randomWeather.trigger();
-    // randomWeather.getRandomWeather()
     menu.close();
   }
 
